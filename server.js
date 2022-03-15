@@ -22,6 +22,7 @@ app.use(cors());
 app.use(express.json());
 app.use(require("./routes/noteR"));
 app.use(require("./routes/itemR"));
+app.use(require("./routes/postR"));
 app.use(express.static(path.join(__dirname, "client", "public")))
 //app.use(express.static(path.join(__dirname, "client", "build")))
 
