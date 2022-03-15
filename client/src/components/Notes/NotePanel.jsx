@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Note from "./Note";
-import CreateArea from "./CreateArea";
+import NoteCreation from "./NoteCreation";
+import "./note.css"
 
 function Notes() {
   const [notes, setNotes] = useState([]);
 
   // This method fetches the records from the database.
   //Backend
-
   useEffect(() => {
     async function getRecords() {
       const response = await fetch(`http://localhost:5000/notes/`);
@@ -61,8 +61,8 @@ function Notes() {
   }
 
   return (
-    <div>
-      <CreateArea fAddNote={addNote} />
+    <div className="containerNotes">
+      <NoteCreation fAddNote={addNote} />
       {notes.map((note) => {
         return (
           <Note

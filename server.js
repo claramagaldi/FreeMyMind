@@ -9,7 +9,7 @@ const app = express();
 require("dotenv").config({ path: "./config.env" });
 
 //app.set
-app.set("view engine", "ejs");
+//app.set("view engine", "ejs");
 
 //app.use
 app.use(
@@ -21,6 +21,7 @@ app.use(
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/noteR"));
+app.use(require("./routes/itemR"));
 app.use(express.static(path.join(__dirname, "client", "public")))
 //app.use(express.static(path.join(__dirname, "client", "build")))
 

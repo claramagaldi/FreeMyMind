@@ -1,0 +1,90 @@
+/* :root {
+    --color-bg:  #eee; 
+    --color-primary: #f5ba13;
+    --color-white: #fff;
+    --color-shadow: #ccc;
+    --color-shadow-variant: rgb(138, 137, 137);
+    --color-shadow-dark: rgba(0, 0, 0, 0.3);
+    --color-black: black;
+    --transition: color-change 0.5s infinite;
+  } */
+
+.containerHome {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerHome > iframe {
+  width: 15%;
+}
+
+.containerHome > h1 {
+  width: 40%;
+  text-align: center;
+}
+
+.blink {
+  -webkit-animation: var(--transition);
+  -moz-animation: var(--transition);
+  -o-animation: var(--transition);
+  -ms-animation: var(--transition);
+  animation: var(--transition);
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    color: var(--color-black);
+  }
+  50% {
+    color: var(--color-primary);
+  }
+  100% {
+    color: var(--color-black);
+  }
+}
+@-moz-keyframes color-change {
+  0% {
+    color: var(--color-black);
+  }
+  50% {
+    color: var(--color-primary);
+  }
+  100% {
+    color: var(--color-black);
+  }
+}
+@-ms-keyframes color-change {
+  0% {
+    color: var(--color-primary);
+  }
+  50% {
+    color: var(--color-black);
+  }
+  100% {
+    color: var(--color-primary);
+  }
+}
+@-o-keyframes color-change {
+  0% {
+    color: var(--color-primary);
+  }
+  50% {
+    color: var(--color-shadow-variant);
+  }
+  100% {
+    color: var(--color-primary);
+  }
+}
+@keyframes color-change {
+  0% {
+    color: var(--color-primary);
+  }
+  50% {
+    color: var(--color-black);
+  }
+  100% {
+    color: var(--color-primary);
+  }
+}

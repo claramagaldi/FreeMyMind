@@ -1,18 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import NotePanel from "./components/NotePanel";
-import ToDoList from "./components/ToDoList";
-import Blog from "./components/Blog";
-import Login from "./components/Login";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import NotePanel from "./components/Notes/NotePanel";
+import ToDoList from "./components/ToDoList/ToDoList";
+import Blog from "./components/Blog/Blog";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      {/* <div style={{ margin: 20 }}></div> */}
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import "./note.css";
 
-function CreateArea(props) {
+function NoteCreation(props) {
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -13,18 +14,20 @@ function CreateArea(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setNote((prevNote) => {
-      return { ...prevNote, [name]: value };
+    setNote((previous) => {
+      return { ...previous, [name]: value };
     });
   }
 
-  function submitNote(event) {
-    props.fAddNote(note);
-    setNote({
-      title: "",
-      content: "",
-    });
-    event.preventDefault();
+  function addNote(event) {
+    if (note.title !== "" && note.content !== "") {
+      props.fAddNote(note);
+      setNote({
+        title: "",
+        content: "",
+      });
+      event.preventDefault();
+    }
   }
 
   return (
@@ -32,21 +35,23 @@ function CreateArea(props) {
       <form className="create-note">
         {isExpanded && (
           <input
-            onChange={handleChange}
             name="title"
-            placeholder="Title"
             value={note.title}
+            onChange={handleChange}
+            placeholder="Title"
+            required
           />
         )}
         <textarea
           name="content"
-          placeholder="Take a note..."
           value={note.content}
           onChange={handleChange}
+          placeholder="Take a note..."
           rows={isExpanded ? 3 : 1}
           onClick={() => {
             setExpanded(true);
           }}
+          required
         />
         <span
           onClick={() => {
@@ -54,7 +59,7 @@ function CreateArea(props) {
           }}
         >
           <Zoom in={isExpanded}>
-            <Fab onClick={submitNote}>
+            <Fab onClick={addNote}>
               <AddIcon />
             </Fab>
           </Zoom>
@@ -64,4 +69,4 @@ function CreateArea(props) {
   );
 }
 
-export default CreateArea;
+export default NoteCreation;

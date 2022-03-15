@@ -1,0 +1,54 @@
+/* :root {
+    --color-bg:  #eee; 
+    --color-primary: #f5ba13;
+    --color-white: #fff;
+    --color-shadow: #ccc;
+    --color-shadow-variant: rgb(138, 137, 137);
+    --color-shadow-dark: rgba(0, 0, 0, 0.3);
+    --color-black: black;
+    --transition: color-change 0.5s infinite;
+  } */
+
+.containerNavbar {
+    background-color: var(--color-primary);
+    margin: auto;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .containerNavbar h1 {
+    color: var(--color-white);
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+  }
+
+  .containerNavbar h5 {
+    margin: 0;
+  }
+
+  .containerNavbar h5:hover {
+    margin: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--color-white);
+    text-decoration-style: wavy;
+    text-underline-offset: 0.4em;
+  }
+
+  .containerNavbar .navcolor {
+    color: var(--color-white) !important;
+  }
+
+  .containerNavbar .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: var(--color-white) ;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: var(--color-white) ;
+  }

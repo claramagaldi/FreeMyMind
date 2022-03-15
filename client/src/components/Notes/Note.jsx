@@ -1,5 +1,7 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
+import "./note.css"
+
 
 function Note(props) {
   function handleClick() {

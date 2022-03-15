@@ -1,0 +1,49 @@
+/* :root {
+    --color-bg:  #eee; 
+    --color-primary: #f5ba13;
+    --color-white: #fff;
+    --color-shadow: #ccc;
+    --color-shadow-variant: rgb(138, 137, 137);
+    --color-shadow-dark: rgba(0, 0, 0, 0.3);
+    --color-black: black;
+    --transition: color-change 0.5s infinite;
+  } */
+
+.containerAbout {
+  margin: 5% 10%;
+}
+
+.containerAbout .highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.containerAbout a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.containerAbout a:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-style: wavy;
+  text-underline-offset: 0.4em;
+}
+
+.containerAbout ul {
+  list-style: none;
+}
+
+.containerAbout ul li::before {
+  content: "\2022";
+  color: var(--color-primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.containerAbout ul li {
+  font-weight: 200;
+}
