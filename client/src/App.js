@@ -5,9 +5,9 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import NotePanel from "./components/Notes/NotePanel";
 import ToDoList from "./components/ToDoList/ToDoList";
-import Blog from "./components/Blog/Blog";
 import Login from "./components/Login/Login";
-
+import Blog from "./components/Blog/Blog";
+import Post from "./components/Blog/Post";
 function App() {
   return (
     <div>
@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/notes" element={<NotePanel />} />
         <Route exact path="/todolist" element={<ToDoList />} />
         <Route exact path="/blog" element={<Blog />} />
+        <Route exact path="/blog/:id" element={<Post />} />
         <Route exact path="/login" element={<Login />} />
       </Routes>
     </div>

@@ -9,12 +9,22 @@ exports.list = function (req, res) {
   });
 };
 
+exports.read = function (req, res) {
+  console.log(req.params.id);
+  let myquery = { _id: req.params.id };
+  Post.findOne(myquery, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+};
+
 exports.create = function (req, res) {
-  let journal = new Post({
+  let post = new Post({
     title: req.body.title,
     content: req.body.content,
+    time: req.body.time,
   });
-  journal.save(function (err, result) {
+  post.save(function (err, result) {
     if (err) throw err;
     res.json(result);
   });

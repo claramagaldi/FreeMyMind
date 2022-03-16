@@ -12,6 +12,7 @@ const About = () => {
         <a
           href="https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/"
           target="_blank"
+          rel="noopener noreferrer"
           className="highlight"
         >
           Dr. Angela Yu
@@ -20,6 +21,7 @@ const About = () => {
         <a
           href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
           target="_blank"
+          rel="noopener noreferrer"
           className="highlight"
         >
           The Complete Web Development Bootcamp
@@ -60,6 +62,7 @@ const About = () => {
           <a
             href="https://coursework.vschool.io/deploying-mern-app-to-heroku/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Deploying MERN App to Heroku (using your Git Master Branch & MongoDB
             Atlas)
@@ -69,6 +72,7 @@ const About = () => {
           <a
             href="https://www.mongodb.com/languages/mern-stack-tutorial"
             target="_blank"
+            rel="noopener noreferrer"
           >
             How to Use MERN Stack: A Complete Guide
           </a>

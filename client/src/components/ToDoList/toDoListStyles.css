@@ -2,9 +2,9 @@
     --color-bg:  #eee; 
     --color-primary: #f5ba13;
     --color-white: #fff;
-    --color-shadow: #ccc;
-    --color-shadow-variant: rgb(138, 137, 137);
-    --color-shadow-dark: rgba(0, 0, 0, 0.3);
+    --color-light-gray: #ccc;
+    --color-gray: rgb(138, 137, 137);
+    --color-dark: rgba(0, 0, 0, 0.3);
     --color-black: black;
     --transition: color-change 0.5s infinite;
   } */
