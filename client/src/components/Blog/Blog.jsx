@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PostCreation from "./PostCreation";
 import "./blogStyles.css";
-import { process_params } from "express/lib/router";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -64,7 +63,7 @@ const Blog = () => {
         return (
           <div>
             <h1>{post.title}</h1>
-            <p>{post.time}</p>
+            <small>{post.time}</small>
             <p>
               {post.content.substring(0, 100) + " ..."}
               <a href={"/blog/" + post._id}>Read More</a>

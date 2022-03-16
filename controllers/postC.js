@@ -3,7 +3,7 @@ require("../models/postM");
 const Post = mongoose.model("Post");
 
 exports.list = function (req, res) {
-  Post.find(function (err, result) {
+  Post.find({}).sort({time: 'desc'}).exec(function (err, result) {
     if (err) throw err;
     res.json(result);
   });
