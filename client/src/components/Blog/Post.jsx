@@ -36,12 +36,6 @@ const Post = () => {
   }, []);
 
   async function deletePost() {
-    // //Frontend
-    // setPosts((previous) => {
-    //   return previous.filter((post) => {
-    //     return post._id !== id;
-    //   });
-    // });
     //Backend
     await fetch(`http://localhost:5000/post/delete/${id}`, {
       method: "DELETE",

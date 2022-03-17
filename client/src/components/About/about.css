@@ -10,7 +10,8 @@
   } */
 
 .containerAbout {
-  margin: 5% 10%;
+  margin: 5rem auto;
+  max-width: 50%;
 }
 
 .containerAbout .highlight {

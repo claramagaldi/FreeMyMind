@@ -10,9 +10,11 @@ const postSchema = new mongoose.Schema({
         required: [true, "Content is required."],
     }, 
     time: {
+        type: Date,
+    },
+    timeString: {
         type: String,
-    }, 
-
+    }
 });
   
 module.exports = mongoose.model('Post', postSchema);

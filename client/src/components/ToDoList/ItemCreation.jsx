@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
 
 const ItemCreation = (props) => {
   const [item, setItem] = useState({
@@ -33,7 +35,10 @@ const ItemCreation = (props) => {
           autocomplete="off"
           required
         />
-        <button onClick={addItem}>+</button>
+        <Fab onClick={addItem}>
+          <AddIcon />
+        </Fab>
+        {/* <button onClick={addItem}>+</button> */}
       </form>
     </div>
   );

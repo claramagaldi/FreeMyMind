@@ -5,6 +5,7 @@ const PostCreation = (props) => {
     title: "",
     content: "",
     time: "",
+    timeString: "",
   });
 
   function handleChange(event) {
@@ -16,12 +17,14 @@ const PostCreation = (props) => {
 
   function addPost(event) {
     if (post.title !== "" && post.content !== "") {
-      post.time = new Date(Date.now()).toString();
+      post.time = new Date();
+      post.timeString = post.time.toLocaleString();
       props.fAddPost(post);
       setPost({
         title: "",
         content: "",
         time: "",
+        timeString: "",
       });
       event.preventDefault();
     }
@@ -49,6 +52,22 @@ const PostCreation = (props) => {
             cols="30"
             placeholder="Post"
           ></textarea>
+          <input
+            name="time"
+            value={post.time}
+            onChange={handleChange}
+            className="form-control"
+            type="hidden"
+            required
+          />
+          <input
+            name="timeString"
+            value={post.timeString}
+            onChange={handleChange}
+            className="form-control"
+            type="hidden"
+            required
+          />
         </div>
         <button
           class="btn btn-primary"

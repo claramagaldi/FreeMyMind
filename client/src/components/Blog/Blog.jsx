@@ -40,6 +40,7 @@ const Blog = () => {
       return;
     });
   }
+  
 
   return (
     <div className="containerBlog">
@@ -48,7 +49,7 @@ const Blog = () => {
         return (
           <div>
             <h1>{post.title}</h1>
-            <small>{post.time}</small>
+            <small>{post.timeString}</small>
             <p>
               {post.content.substring(0, 100) + " ... "}
               <a href={"/blog/" + post._id}>Read More</a>

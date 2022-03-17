@@ -35,13 +35,13 @@
 
 .card button {
   position: absolute;
-  left: 1.5rem;
-  bottom: 1.5rem;
+  right: 1.5rem;
+  top: 1.5rem;
 }
 
 .containerBlog {
-  margin: 5% 10%;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  margin: 5rem auto;
+  max-width: 50%;
 }
 
 .containerBlog button, .card button {
@@ -99,4 +99,14 @@
 
 .containerBlog h1  {
   padding: 10px 0 0 0;
+}
+
+form {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+body {
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }

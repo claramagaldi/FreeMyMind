@@ -23,6 +23,7 @@ exports.create = function (req, res) {
     title: req.body.title,
     content: req.body.content,
     time: req.body.time,
+    timeString: req.body.timeString,
   });
   post.save(function (err, result) {
     if (err) throw err;

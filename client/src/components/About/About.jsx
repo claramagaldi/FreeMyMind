@@ -6,8 +6,8 @@ const About = () => {
     <div className="containerAbout">
       <h1>About this project</h1>
       <p>
-        Free My Mind is an app using MERN stack, using cloud database and
-        deployed live. <br />
+        Free My Mind is an app using MERN stack, cloud database and
+        live deployment. <br />
         This is a compilation of projects taught by{" "}
         <a
           href="https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/"
