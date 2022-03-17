@@ -29,19 +29,17 @@ const PostCreation = (props) => {
 
   return (
     <div>
-      <h1>Compose</h1>
       <form>
         <div class="form-group">
-          <label>Title</label>
           <input
             name="title"
             value={post.title}
             onChange={handleChange}
             className="form-control"
             type="text"
+            placeholder="Title"
             required
           />
-          <label>Post</label>
           <textarea
             name="content"
             value={post.content}
@@ -49,6 +47,7 @@ const PostCreation = (props) => {
             className="form-control"
             rows="5"
             cols="30"
+            placeholder="Post"
           ></textarea>
         </div>
         <button

@@ -61,7 +61,7 @@ const ToDoList = () => {
   }
 
   return (
-    <div class="box">
+    <div class="containerToDoList">
       <ItemCreation fAddItem={addItem} />
       {items.map((item) => {
         return (

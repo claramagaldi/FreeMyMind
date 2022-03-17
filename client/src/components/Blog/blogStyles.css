@@ -1,11 +1,11 @@
 :root {
-  --color-bg: #eee;
-  --color-primary: #f5ba13;
-  --color-white: #fff;
-  --color-light-gray: #ccc;
-  --color-gray: rgb(138, 137, 137);
-  --color-dark: rgba(0, 0, 0, 0.3);
-  --color-black: black;
+ --color-bg: #eee;
+ --color-primary: #f5ba13;
+ --color-white: #fff;
+ --color-light-gray: #ccc;
+ --color-gray: rgb(138, 137, 137);
+ --color-dark: rgba(0, 0, 0, 0.3);
+ --color-black: black;
   --transition: color-change 0.5s infinite;
 }
 
@@ -20,10 +20,83 @@
   left: 0;
   position: fixed;
 }
+
 .card {
   width: 60%;
   height: 50%;
   border-radius: 10px;
   background-color: white;
-  padding: 10px;
+  padding-left: 0px;
+}
+
+.card h1, .card p {
+  padding: 1.5rem;
+}
+
+.card button {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+}
+
+.containerBlog {
+  margin: 5% 10%;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+.containerBlog button, .card button {
+  width:fit-content;
+  border-radius: 7px;
+  border-color: transparent;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.containerBlog button {
+  margin-bottom: 2rem;
+}
+
+.containerBlog button:hover, .card button:hover {
+  border-color: var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.containerBlog input[type="text"], .containerBlog textarea {
+  background: var(--color-white);
+  border-radius: 7px;
+  box-shadow: 0 1px 5px var(--color-gray);
+  font-weight: 200;
+  margin: 2% 0;
+}
+
+.containerBlog textarea:focus, .containerBlog input:focus {
+  box-shadow: 0 1px 5px var(--color-gray);
+  border-color: transparent;
+}
+
+.containerBlog ::placeholder {
+  color: var(--color-gray);
+  opacity: 1;
+}
+
+.containerBlog a {
+  color: var(--color-gray);
+  text-decoration: none;
+}
+
+.containerBlog a:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-style: wavy;
+  text-underline-offset: 0.4em;
+}
+
+.containerBlog p {
+  margin-top: 1rem;
+}
+
+.containerBlog h1  {
+  padding: 10px 0 0 0;
 }

@@ -1,11 +1,11 @@
 /* :root {
-    --color-bg:  #eee; 
-    --color-primary: #f5ba13;
-    --color-white: #fff;
-    --color-light-gray: #ccc;
-    --color-gray: rgb(138, 137, 137);
-    --color-dark: rgba(0, 0, 0, 0.3);
-    --color-black: black;
+   --color-bg:  #eee; 
+   --color-primary: #f5ba13;
+   --color-white: #fff;
+   --color-light-gray: #ccc;
+   --color-gray: rgb(138, 137, 137);
+   --color-dark: rgba(0, 0, 0, 0.3);
+   --color-black: black;
     --transition: color-change 0.5s infinite;
   } */
 
@@ -71,7 +71,7 @@
     color: var(--color-primary);
   }
   50% {
-    color: var(--color-shadow-variant);
+    color: var(--color-gray);
   }
   100% {
     color: var(--color-primary);

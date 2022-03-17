@@ -41,31 +41,16 @@ const Blog = () => {
     });
   }
 
-
-  async function deletePost(id) {
-    //Frontend
-    setPosts((previous) => {
-      return previous.filter((post) => {
-        return post._id !== id;
-      });
-    });
-    //Backend
-    await fetch(`http://localhost:5000/post/delete/${id}`, {
-      method: "DELETE",
-    });
-  }
-
   return (
-    <div>
+    <div className="containerBlog">
       <PostCreation fAddPost={addPost} />
-      <h1>My Posts</h1>
       {posts.map((post) => {
         return (
           <div>
             <h1>{post.title}</h1>
             <small>{post.time}</small>
             <p>
-              {post.content.substring(0, 100) + " ..."}
+              {post.content.substring(0, 100) + " ... "}
               <a href={"/blog/" + post._id}>Read More</a>
             </p>
           </div>
