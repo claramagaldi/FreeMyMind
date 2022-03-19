@@ -28,6 +28,7 @@ export default function NavBar() {
               <Nav.Link href="/todolist"><h5>To Do List</h5></Nav.Link>
               <Nav.Link href="/blog"><h5>Blog</h5></Nav.Link>
               <Nav.Link href="/login"><h5>Login</h5></Nav.Link>
+              <Nav.Link href="/register"><h5>Register</h5></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

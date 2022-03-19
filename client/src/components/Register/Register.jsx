@@ -1,12 +1,30 @@
 import React, { useState } from "react";
 
-const Login = (props) => {
+const Register = (props) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
     provider: "local",
     email: "",
   });
+  
+  async function authenticateBE(newUser) {
+    // //Frontend
+    // setUser((previous) => {
+    //   return [...previous, newUser];
+    // });
+    //Backend
+    await fetch("http://localhost:5000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    }).catch((error) => {
+      window.alert(error);
+      return;
+    });
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -15,9 +33,9 @@ const Login = (props) => {
     });
   }
 
-  function Authenticate(event) {
+  function authenticate(event) {
     if (user.username !== "" && user.password !== "") {
-      //props.fAuthenticate(user);
+      authenticateBE(user);
       setUser({
         username: "",
         password: "",
@@ -47,12 +65,10 @@ const Login = (props) => {
             required
           />
         </div>
-        <button onClick={Authenticate}>
-          Login
-        </button>
+        <button onClick={authenticate}>Login</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
