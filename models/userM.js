@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -16,4 +18,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-module.exports = userSchema;
+userSchema.plugin(passportLocalMongoose); // REGISTERED
+//userSchema.plugin(findOrCreate); // GOOGLE & FACEBOOK
+
+module.exports = new mongoose.model("User", userSchema);;

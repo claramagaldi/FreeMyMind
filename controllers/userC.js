@@ -1,19 +1,22 @@
 const mongoose = require("mongoose");
-const User = require("../server");
+const User = require("../models/userM");
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose"); //hash and salt passwords and save users into mongoDB Database
-const session = require("express-session");
 
-// exports.auth = function (req, res) {
-//   console.log("req.body.username: " + req.body.username);
-//   console.log("req.body.password: " + req.body.password);
-//   User.register({username: req.body.username}, req.body.password, function(err, user) {
-//     if (err) throw err;
-//     passport.authenticate("local")(request, result, function(){
-//       console.log("result: " + res.json(result));
-//     })
-//   })
-// };
+exports.auth =  function (req, res) {
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log("username BE: " + username);
+  console.log("password BE: " + password);
+  User.register({ username: username }, password, function (err, user) {
+    if (err) {
+      console.log(err);
+      res.redirect("/register");
+    } //throw err;
+    passport.authenticate("local")(req, res, function () {
+      console.log("result: " + res);
+    });
+  });
+};
 
 // exports.auth = function (req, res) {
 //   const user = new User({

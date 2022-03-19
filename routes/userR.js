@@ -6,7 +6,7 @@ const userC = require("../controllers/userC");
 // The router will be added as a middleware and will take control of requests starting with path /item.
 const userRoutes = express.Router();
 
-//userRoutes.route("/register").post(userC.auth);
+userRoutes.route("/register").post(userC.auth);
 
 //serRoutes.route("/login").post(userC.auth);
 

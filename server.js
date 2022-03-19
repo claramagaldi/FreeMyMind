@@ -54,32 +54,15 @@ const dbo = require("./db/conn");
 // Connecting
 dbo.connectToServer();
 
-//SCHEMA
-// const userSchema = new mongoose.Schema({
-//   username: {
-//     // values: email address, googleId, facebookId
-//     type: String,
-//     unique: true,
-//     required: [true, "Username is required."],
-//   },
-//   password: {
-//     type: String,
-//   },
-//   provider: {
-//     // values: 'local', 'google', 'facebook'
-//     type: String,
-//   },
-//   email: {
-//     type: String,
-//   },
-// });
 
-const userSchema = require("./models/userM")
+require("./models/userM");
+const User = mongoose.model("User");
 
-userSchema.plugin(passportLocalMongoose); // REGISTERED
+//const userSchema = require("./models/userM")
+//userSchema.plugin(passportLocalMongoose); // REGISTERED
 //userSchema.plugin(findOrCreate); // GOOGLE & FACEBOOK
 
-const User = new mongoose.model("User", userSchema);
+//const User = new mongoose.model("User", userSchema);
 
 //STRATEGIES
 
@@ -139,21 +122,21 @@ passport.deserializeUser(User.deserializeUser());
 //   )
 // );
 
-app.post("/register", function (req, res) {
-  const username = req.body.username;
-  const password = req.body.password;
-  console.log("username BE: " + username);
-  console.log("password BE: " + password);
-  User.register({ username: username }, password, function (err, user) {
-    if (err) {
-      console.log(err);
-      res.redirect("/register");
-    } //throw err;
-    passport.authenticate("local")(req, res, function () {
-      console.log("result: " + res);
-    });
-  });
-});
+// app.post("/register", function (req, res) {
+//   const username = req.body.username;
+//   const password = req.body.password;
+//   console.log("username BE: " + username);
+//   console.log("password BE: " + password);
+//   User.register({ username: username }, password, function (err, user) {
+//     if (err) {
+//       console.log(err);
+//       res.redirect("/register");
+//     } //throw err;
+//     passport.authenticate("local")(req, res, function () {
+//       console.log("result: " + res);
+//     });
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
