@@ -4,8 +4,8 @@ const Register = (props) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
-    provider: "local",
-    email: "",
+    // provider: "local",
+    // email: "",
   });
   
   async function authenticateBE(newUser) {
@@ -34,13 +34,13 @@ const Register = (props) => {
   }
 
   function authenticate(event) {
-    if (user.username !== "" && user.password !== "") {
+    if (user.username !== "") {
       authenticateBE(user);
       setUser({
         username: "",
         password: "",
-        provider: "",
-        email: "",
+        // provider: "",
+        // email: "",
       });
       event.preventDefault();
     }
