@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 //const session = require("express-session");
 //const passport = require("passport");
 //const passportLocalMongoose = require("passport-local-mongoose"); //hash and salt passwords and save users into mongoDB Database
@@ -44,11 +44,6 @@ app.get("*", (req, res) => {
 // app.use(passport.initialize());
 // Persistent login sessions
 // app.use(passport.session());
-
-////// DATABASE //////
-
-// Getting driver connection
-const dbo = require("./db/conn");
 
 ////// MODELS //////
 
@@ -121,6 +116,11 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 5000;
 }
+
+////// DATABASE //////
+
+// Getting driver connection
+const dbo = require("./db/conn");
 
 ////// START //////
 app.listen(port, () => {
