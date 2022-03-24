@@ -11,6 +11,7 @@
 
 .containerHome {
   height: 90vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,11 +94,17 @@
 /* Media Queries (extra-large devices) */
 
 @media screen and (min-width: 1824px) {
+  .containerHome {
+  }
 }
 
 /* Media Queries (large devices) */
 
 @media screen and (max-width: 1824px) {
+
+  .containerHome {
+  }
+
   .containerHome > img {
     max-height: 80%;
   }
@@ -105,26 +112,30 @@
     padding: 3rem;
     width: 50%;
   }
-
-  h1 {
-    font-size: 200%;
-  }
 }
 
 /* Media Queries (medium devices) */
 
 @media screen and (max-width: 1024px) {
 
-  .containerHome > img {
-    max-height: 100%;
+  .containerHome {
+    /* height: 70vh; */
   }
 
   .containerHome {
     flex-direction: column;
   }
+
+  .containerHome > img {
+    max-height: 100%;
+    margin: 0% 0% 15% 0%;
+  }
 }
 
 /* Media Queries (small devices) */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+
+  .containerHome {
+  }
 }

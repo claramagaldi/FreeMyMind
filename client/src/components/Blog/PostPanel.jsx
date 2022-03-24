@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PostCreation from "./PostCreation";
-import "./blogStyles.css";
+import "./postStyles.css";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -40,23 +40,24 @@ const Blog = () => {
       return;
     });
   }
-  
 
   return (
     <div className="containerBlog">
       <PostCreation fAddPost={addPost} />
-      {posts.map((post) => {
-        return (
-          <div>
-            <h1>{post.title}</h1>
-            <small>{post.timeString}</small>
-            <p>
-              {post.content.substring(0, 100) + " ... "}
-              <a href={"/blog/" + post._id}>Read More</a>
-            </p>
-          </div>
-        );
-      })}
+      <div className="posts">
+        {posts.map((post) => {
+          return (
+            <div>
+              <h2>{post.title}</h2>
+              <small>{post.timeString}</small>
+              <p>
+                {post.content.substring(0, 100) + " ... "}
+                <a href={"/blog/" + post._id}>Read More</a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

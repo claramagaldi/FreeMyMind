@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
-import "./note.css"
+import "./noteStyles.css"
 
 
 function Note(props) {
@@ -11,7 +11,7 @@ function Note(props) {
   return (
 
       <div className="note">
-        <h1><b>{props.title}</b></h1>
+        <h3>{props.title}</h3>
         <p>{props.content}</p>
         <button onClick={handleClick}>
           <DeleteIcon />

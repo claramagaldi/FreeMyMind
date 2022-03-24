@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Fade from "@material-ui/core/Fade";
-import "./blogStyles.css";
+import "./postStyles.css";
 import { useNavigate } from "react-router-dom";
 
 const Post = () => {

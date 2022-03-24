@@ -27,6 +27,10 @@ body {
   width: 100%;
 }
 
+.containerApp {
+  width: 100%;
+}
+
 footer {
   position: absolute;
   text-align: center;
@@ -36,5 +40,43 @@ footer {
 }
 
 footer p {
-  color: var(--color-light-gray);
+  background: var(--color-light-gray) !important;
 }
+
+/* Media Queries (extra-large devices) */
+
+/* @media screen and (min-width: 1824px) {
+  body {
+    background: lightgray !important;
+  }
+} */
+
+/* Media Queries (large devices) */
+
+/* @media screen and (max-width: 1824px) {
+
+  body {
+    background: lightblue !important;
+  }
+
+} */
+
+/* Media Queries (medium devices) */
+
+/* @media screen and (max-width: 1024px) {
+
+  body {
+    background: lightgreen !important;
+  }
+
+} */
+
+/* Media Queries (small devices) */
+
+/* @media screen and (max-width: 768px) {
+
+  body {
+    background: lightcoral !important;
+  }
+
+} */

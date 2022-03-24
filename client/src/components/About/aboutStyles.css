@@ -48,3 +48,36 @@
 .containerAbout ul li {
   font-weight: 200;
 }
+
+/* Media Queries (extra-large devices) */
+
+@media screen and (min-width: 1824px) {
+
+}
+
+/* Media Queries (large devices) */
+
+@media screen and (max-width: 1824px) {
+
+  .containerAbout {
+    margin: 4rem auto;
+    max-width: 80%;
+  }
+
+}
+
+/* Media Queries (medium devices) */
+
+@media screen and (max-width: 1024px) {
+
+  .containerAbout {
+    max-width: 70%;
+  }
+
+}
+
+/* Media Queries (small devices) */
+
+@media screen and (max-width: 768px) {
+
+}

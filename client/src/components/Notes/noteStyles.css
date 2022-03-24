@@ -32,11 +32,11 @@
   
 }
 .note h1 {
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   margin-bottom: 6px;
 }
 .note p {
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;

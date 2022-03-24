@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import NoteCreation from "./NoteCreation";
-import "./note.css";
+import "./noteStyles.css";
 
 function Notes() {
   const [notes, setNotes] = useState([]);
@@ -78,9 +78,9 @@ function Notes() {
           );
         })}
       </div>
-      <footer>
+      {/* <footer>
         <p>Copyright ⓒ {new Date().getFullYear()}</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }

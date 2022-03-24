@@ -7,7 +7,7 @@ import NotePanel from "./components/Notes/NotePanel";
 import ToDoList from "./components/ToDoList/ToDoList";
 // import Login from "./components/Login/Login";
 // import Register from "./components/Register/Register";
-import Blog from "./components/Blog/Blog";
+import PostPanel from "./components/Blog/PostPanel";
 import Post from "./components/Blog/Post";
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/notes" element={<NotePanel />} />
         <Route exact path="/todolist" element={<ToDoList />} />
-        <Route exact path="/blog" element={<Blog />} />
+        <Route exact path="/blog" element={<PostPanel />} />
         <Route exact path="/blog/:id" element={<Post />} />
         {/* <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} /> */}
