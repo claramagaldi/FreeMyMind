@@ -27,10 +27,10 @@ app.use(require("./routes/itemR"));
 app.use(require("./routes/postR"));
 
 app.use(express.static(path.join(__dirname, "client", "build")));
-//app.use(express.static(path.join(__dirname, "client", "public")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
+
 // app.use(require("./routes/userR"));
 // app.use(
 //   session({
@@ -49,8 +49,6 @@ app.get("*", (req, res) => {
 
 // Getting driver connection
 const dbo = require("./db/conn");
-// Connecting
-dbo.connectToServer();
 
 ////// MODELS //////
 
@@ -126,5 +124,7 @@ if (port == null || port == "") {
 
 ////// START //////
 app.listen(port, () => {
+  // perform a database connection when server starts
+  dbo.connectToServer();
   console.log(`Server is running on port: ${port}`);
 });
