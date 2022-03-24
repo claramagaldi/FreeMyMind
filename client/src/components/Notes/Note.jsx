@@ -11,7 +11,7 @@ function Note(props) {
   return (
 
       <div className="note">
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
         <p>{props.content}</p>
         <button onClick={handleClick}>
           <DeleteIcon />

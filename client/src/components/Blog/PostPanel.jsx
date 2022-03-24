@@ -47,8 +47,8 @@ const Blog = () => {
       <div className="posts">
         {posts.map((post) => {
           return (
-            <div>
-              <h2>{post.title}</h2>
+            <div className="post">
+              <h3>{post.title}</h3>
               <small>{post.timeString}</small>
               <p>
                 {post.content.substring(0, 100) + " ... "}

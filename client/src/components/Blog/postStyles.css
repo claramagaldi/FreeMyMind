@@ -10,7 +10,11 @@
 }
 
 .posts {
-  margin: 2% 10%;
+  margin: 0% 10%;
+}
+
+.post {
+  margin-bottom: 2rem;
 }
 
 .mask {
