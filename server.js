@@ -14,8 +14,7 @@ const path = require("path");
 
 const app = express();
 require("dotenv").config({ path: "./config.env" });
-app.use(express.static(path.join(__dirname, "client", "public")));
-app.use(express.static(path.join(__dirname, "client", "build")))
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -26,6 +25,9 @@ app.use(express.json());
 app.use(require("./routes/noteR"));
 app.use(require("./routes/itemR"));
 app.use(require("./routes/postR"));
+
+app.use(express.static(path.join(__dirname, "client", "build")));
+//app.use(express.static(path.join(__dirname, "client", "public")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
