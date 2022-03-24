@@ -21,4 +21,4 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(passportLocalMongoose); // REGISTERED
 //userSchema.plugin(findOrCreate); // GOOGLE & FACEBOOK
 
-module.exports = new mongoose.model("User", userSchema);;
+module.exports = new mongoose.model("User", userSchema);

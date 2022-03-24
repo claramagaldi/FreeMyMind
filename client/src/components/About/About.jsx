@@ -46,11 +46,11 @@ const About = () => {
         <li>EJS</li>
         <li>Update: transform EJS solution into REACT solution.</li>
       </ul>
-      <h4>Login</h4>
+      {/* <h4>Login</h4>
       <ul>
         <li>Section 32: Authentication & Security</li>
         <li>OAuth 2.0 and signing in with Google</li>
-      </ul>
+      </ul> */}
       <h4>Deployment</h4>
       <ul>
         <li>Section 29: Deploying your Web Application</li>

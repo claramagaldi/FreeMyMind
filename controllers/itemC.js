@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 require("../models/itemM");
 const Item = mongoose.model("Item");
 
-exports.list = function (req, res) {
-    Item.find(function (err, result) {
+exports.list = function (req, res, next) {
+  Item.find(function (err, result) {
     if (err) throw err;
     res.json(result);
   });

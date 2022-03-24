@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import NoteCreation from "./NoteCreation";
-import "./note.css"
+import "./note.css";
 
 function Notes() {
   const [notes, setNotes] = useState([]);
 
   // This method fetches the records from the database.
   //Backend
+
   useEffect(() => {
     async function getRecords() {
+      const response1 = await fetch(`http://localhost:5000/checkAuth/`);
       const response = await fetch(`http://localhost:5000/notes/`);
 
       if (!response.ok) {
@@ -63,17 +65,19 @@ function Notes() {
   return (
     <div className="containerNotes">
       <NoteCreation fAddNote={addNote} />
-      {notes.map((note) => {
-        return (
-          <Note
-            key={note._id}
-            id={note._id}
-            title={note.title}
-            content={note.content}
-            fDeleteNote={deleteNote}
-          />
-        );
-      })}
+      <div className="notes">
+        {notes.map((note) => {
+          return (
+            <Note
+              key={note._id}
+              id={note._id}
+              title={note.title}
+              content={note.content}
+              fDeleteNote={deleteNote}
+            />
+          );
+        })}
+      </div>
       <footer>
         <p>Copyright ⓒ {new Date().getFullYear()}</p>
       </footer>

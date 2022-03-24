@@ -11,17 +11,25 @@
 
 .containerNotes {
   margin: 5rem auto;
-  max-width: 50%;
+}
+
+.notes {
+  margin: 2% 10%;
+  display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .note {
+  
   background: var(--color-white);
   border-radius: 7px;
   box-shadow: 0 2px 5px var(--color-light-gray);
   padding: 10px;
   width: 240px;
   margin: 16px;
-  float: left;
+  float:left;
+  
 }
 .note h1 {
   font-size: 1.2em;

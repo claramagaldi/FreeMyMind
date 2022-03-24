@@ -1,20 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const session = require("express-session");
-const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose"); //hash and salt passwords and save users into mongoDB Database
-//const GoogleStrategy = require("passport-google-oauth20").Strategy;
-//const FacebookStrategy = require("passport-facebook").Strategy;
-//const findOrCreate = require("mongoose-findorcreate");
+//const session = require("express-session");
+//const passport = require("passport");
+//const passportLocalMongoose = require("passport-local-mongoose"); //hash and salt passwords and save users into mongoDB Database
+// const GoogleStrategy = require("passport-google-oauth20").Strategy;
+// const FacebookStrategy = require("passport-facebook").Strategy;
+// const findOrCreate = require("mongoose-findorcreate");
 const cors = require("cors");
 const path = require("path");
 
-// INITIAL CONFIGURATIONS
+////// EXPRESS //////
 
 const app = express();
 require("dotenv").config({ path: "./config.env" });
-
 app.use(express.static(path.join(__dirname, "client", "public")));
 //app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(
@@ -22,54 +21,43 @@ app.use(
     extended: true,
   })
 );
-
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/noteR"));
 app.use(require("./routes/itemR"));
 app.use(require("./routes/postR"));
-app.use(require("./routes/userR"));
-app.use(
-  session({
-    secret: "Our little secret.",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(require("./routes/userR"));
+// app.use(
+//   session({
+//     secret: "mySecret",
+//     resave: true, // resave cookies even if nothing changed
+//     saveUninitialized: true,
+//   })
+// );
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+// Init passport authentication
+// app.use(passport.initialize());
+// Persistent login sessions
+// app.use(passport.session());
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 5000;
-}
+////// DATABASE //////
 
-// DATABASE
 // Getting driver connection
 const dbo = require("./db/conn");
 // Connecting
 dbo.connectToServer();
 
+////// MODELS //////
 
-require("./models/userM");
-const User = mongoose.model("User");
+////// STRATEGIES //////
 
-//const userSchema = require("./models/userM")
-//userSchema.plugin(passportLocalMongoose); // REGISTERED
-//userSchema.plugin(findOrCreate); // GOOGLE & FACEBOOK
+// require("./models/userM");
+// const User = mongoose.model("User");
 
-//const User = new mongoose.model("User", userSchema);
-
-//STRATEGIES
-
-//Registered Strategy
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// //Local Strategy
+// passport.use(User.createStrategy());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 // //Google Strategy
 // passport.use(
@@ -122,22 +110,16 @@ passport.deserializeUser(User.deserializeUser());
 //   )
 // );
 
-// app.post("/register", function (req, res) {
-//   const username = req.body.username;
-//   const password = req.body.password;
-//   console.log("username BE: " + username);
-//   console.log("password BE: " + password);
-//   User.register({ username: username }, password, function (err, user) {
-//     if (err) {
-//       console.log(err);
-//       res.redirect("/register");
-//     } //throw err;
-//     passport.authenticate("local")(req, res, function () {
-//       console.log("result: " + res);
-//     });
-//   });
-// });
+////// ROUTES //////
 
+////// CONTROLLERS //////
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
+
+////// START //////
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

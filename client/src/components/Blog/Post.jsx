@@ -39,6 +39,7 @@ const Post = () => {
     //Backend
     await fetch(`http://localhost:5000/post/delete/${id}`, {
       method: "DELETE",
+      //credentials: 'include',
     });
   }
 
